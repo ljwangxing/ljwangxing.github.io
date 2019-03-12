@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content=",">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王兴" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="git使用小归纳 作为即将成为前端开发工程师，对于git的使用也是要了解的，现在将我所学习到的git的知识小结一下，以便未来肯能会用到。  git的简单介绍 git是一款源代码管理工具（版本控制工具），git里面的命令都是linux命名，需要有linux命令操作基础git基础配置   查看git版本：git --version 查看git是否配置成功：git config --list初始化git">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="website">
+<meta property="og:title" content="git使用小归纳">
+<meta property="og:url" content="http://yoursite.com/about/git使用小归纳.html">
+<meta property="og:site_name" content="王兴">
+<meta property="og:description" content="git使用小归纳 作为即将成为前端开发工程师，对于git的使用也是要了解的，现在将我所学习到的git的知识小结一下，以便未来肯能会用到。  git的简单介绍 git是一款源代码管理工具（版本控制工具），git里面的命令都是linux命名，需要有linux命令操作基础git基础配置   查看git版本：git --version 查看git是否配置成功：git config --list初始化git">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-12T08:33:31.535Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git使用小归纳">
+<meta name="twitter:description" content="git使用小归纳 作为即将成为前端开发工程师，对于git的使用也是要了解的，现在将我所学习到的git的知识小结一下，以便未来肯能会用到。  git的简单介绍 git是一款源代码管理工具（版本控制工具），git里面的命令都是linux命名，需要有linux命令操作基础git基础配置   查看git版本：git --version 查看git是否配置成功：git config --list初始化git">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/about/git使用小归纳.html">
+
+
+
+
+
+  <title>git使用小归纳 | 王兴</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王兴</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">王兴的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">git使用小归纳</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h1 id="git使用小归纳"><a href="#git使用小归纳" class="headerlink" title="git使用小归纳"></a>git使用小归纳</h1><ul>
+<li>作为即将成为前端开发工程师，对于git的使用也是要了解的，现在将我所学习到的git的知识小结一下，以便未来肯能会用到。</li>
+</ul>
+<h2 id="git的简单介绍"><a href="#git的简单介绍" class="headerlink" title="git的简单介绍"></a>git的简单介绍</h2><ul>
+<li>git是一款源代码管理工具（版本控制工具），git里面的命令都是linux命名，需要有linux命令操作基础<h2 id="git基础配置"><a href="#git基础配置" class="headerlink" title="git基础配置"></a>git基础配置</h2></li>
+</ul>
+<ol>
+<li>查看git版本：<code>git --version</code></li>
+<li>查看git是否配置成功：<code>git config --list</code><h2 id="初始化git仓储"><a href="#初始化git仓储" class="headerlink" title="初始化git仓储"></a>初始化git仓储</h2></li>
+</ol>
+<ul>
+<li>git仓库可以简单理解为文件夹</li>
+<li>命令：<code>git init</code></li>
+<li>在项目目录修建打开git bash，这个仓库会存放，git对我们的项目代码举行备份的文件。<br>##将代码存储到git仓库中</li>
+</ul>
+<ol>
+<li>将代码存储到.git仓储的门口：<code>git add ./readme.md</code></li>
+<li>把仓储门口的代码放到里面的房间中：<code>git commit -m &quot;说明行的文字&quot;</code></li>
+<li>查看当前的状态：<code>git status</code><h2 id="存储命令补充"><a href="#存储命令补充" class="headerlink" title="存储命令补充"></a>存储命令补充</h2></li>
+<li><code>git add ./</code>:可以把当前目录下所有修改过的文件添加到仓储门口</li>
+<li><code>git commit --all -m &quot;说明信息&quot;</code>：一次性将所有修改过的文件添加到版本库中<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2></li>
+<li>命令：<code>git reset --hard Head~0</code>0代表当前版本的意思，往后以此类推，数字是几就代表回退到哪一个版本，然后在此基础上，在看日志的话，命令行就只会显示当前head指向本身和它之后的所有版本。</li>
+<li>head永远指向当前最新的版本<h2 id="git通过版本号切换版本"><a href="#git通过版本号切换版本" class="headerlink" title="git通过版本号切换版本"></a>git通过版本号切换版本</h2><code>git reflog</code>：可以看到每一次切换版本的记录，可以看到所有提交的版本号<h2 id="git创建分支和切换分支"><a href="#git创建分支和切换分支" class="headerlink" title="git创建分支和切换分支"></a>git创建分支和切换分支</h2></li>
+</ol>
+<ul>
+<li>默认是有一个主分支master</li>
+</ul>
+<ol>
+<li>创建分支：<code>git branch dev</code>,在刚创建时dev分支里的东西和master分支里的东西是一样的</li>
+<li>切换分支:<code>git checkout dev</code>，切换到指定分支，这里的切换到名为dev的分支。</li>
+<li><code>git branch</code>：可以查看当前有哪些分支</li>
+<li><code>git merge dev</code>:合并分支内容，把当前分支与指定分支（dev），进行合并，当前分支指的是<code>git branch</code>命令输出的前面有*号的分支。<h2 id="提交代码到github-当做github服务器来使用）"><a href="#提交代码到github-当做github服务器来使用）" class="headerlink" title="提交代码到github(当做github服务器来使用）"></a>提交代码到github(当做github服务器来使用）</h2></li>
+</ol>
+<ul>
+<li><code>git push [地址] master</code>:会把当前分支的内容上传到远程的master分支上</li>
+<li><code>git pull [地址] master</code>:会把远程分支的内容下载到本地</li>
+<li><code>git clone [地址]</code>:会得到远程仓库相同的内容，如果多次执行会覆盖本地的内容<br><em>——————————————————————————————————————————————————————</em><br>##今天的归纳就到这里了，以后学习到的新知识还会补充的</li>
+</ul>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description">王兴的博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git使用小归纳"><span class="nav-number">1.</span> <span class="nav-text">git使用小归纳</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git的简单介绍"><span class="nav-number">1.1.</span> <span class="nav-text">git的简单介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git基础配置"><span class="nav-number">1.2.</span> <span class="nav-text">git基础配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化git仓储"><span class="nav-number">1.3.</span> <span class="nav-text">初始化git仓储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储命令补充"><span class="nav-number">1.4.</span> <span class="nav-text">存储命令补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退"><span class="nav-number">1.5.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git通过版本号切换版本"><span class="nav-number">1.6.</span> <span class="nav-text">git通过版本号切换版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git创建分支和切换分支"><span class="nav-number">1.7.</span> <span class="nav-text">git创建分支和切换分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交代码到github-当做github服务器来使用）"><span class="nav-number">1.8.</span> <span class="nav-text">提交代码到github(当做github服务器来使用）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
