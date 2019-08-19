@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="王兴">
 <meta property="og:description" content="filter(）函数filter() 函数用于过滤序列，过滤掉不符合条件的元素，返回一个迭代器对象，如果要转换为列表，可以使用 list() 来转换。  该函数接收两个参数，第一个为函数，第二个为序列，序列的每个元素作为参数传递给函数进行判断，然后返回 True 或 False，最后将返回 True 的元素放到新列表中。  语法：filter(function,iterable)a = [1,2,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-19T16:15:13.379Z">
+<meta property="og:updated_time" content="2019-08-19T16:18:58.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的内建函数">
 <meta name="twitter:description" content="filter(）函数filter() 函数用于过滤序列，过滤掉不符合条件的元素，返回一个迭代器对象，如果要转换为列表，可以使用 list() 来转换。  该函数接收两个参数，第一个为函数，第二个为序列，序列的每个元素作为参数传递给函数进行判断，然后返回 True 或 False，最后将返回 True 的元素放到新列表中。  语法：filter(function,iterable)a = [1,2,">
@@ -392,10 +392,7 @@ print(list(map(lambda x,y:x + y,a,b))) #[3, 5, 7]</code></p>
 <li><p><strong>zip语法</strong> ：<strong>zip([iterable,…]) </strong> <strong>iterable…</strong>  ：<strong>一个或者多个迭代器</strong></p>
 </li>
 </ul>
-<p><code></code> dicta = {‘a’:’aa’,’b’:’bb’}</p>
-<p>dictb = zip(dicta.values(),dicta.keys())</p>
-<p>print(dict(dictb)) #{‘aa’: ‘a’, ‘bb’: ‘b’} <code></code></p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> dicta = &#123;&apos;a&apos;:&apos;aa&apos;,&apos;b&apos;:&apos;bb&apos;&#125;</span><br><span class="line"></span><br><span class="line">  dictb = zip(dicta.values(),dicta.keys())</span><br><span class="line"></span><br><span class="line">print(dict(dictb)) #&#123;&apos;aa&apos;: &apos;a&apos;, &apos;bb&apos;: &apos;b&apos;&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
